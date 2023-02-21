@@ -1,7 +1,7 @@
 <?php
 
 
-include("conexion.php");
+include("../../conexion.php");
 $con=conectar();
 
 // Tomar los datos del formulario

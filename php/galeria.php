@@ -91,13 +91,13 @@ $query=mysqli_query($con,$sql);
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">  ¿Seguro quieres eliminar el blog: <?php echo $row['nombreimagen'] ?> ?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">  ¿Seguro quieres eliminar la imagen: <?php echo $row['nombreimagen'] ?> ?</h5>
         
         </div>
      
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <a  class="btn btn-danger" href="cruds/eliminarGaleria.php?id=<?php echo $row['ID_galeria'] ?>">Eliminar</a>
+          <a  class="btn btn-danger" href="cruds/galeria/eliminarGaleria.php?id=<?php echo $row['ID_galeria'] ?>">Eliminar</a>
         </div>
       </div>
     </div>
@@ -115,7 +115,7 @@ $query=mysqli_query($con,$sql);
      
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <a  class="btn btn-success" href="cruds/publicarGaleria.php?id=<?php echo $row['ID_galeria']?>">Publicar</a>
+          <a  class="btn btn-success" href="cruds/galeria/publicarGaleria.php?id=<?php echo $row['ID_galeria']?>">Publicar</a>
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@ $query=mysqli_query($con,$sql);
 
 
 
-     <div class="modal fade bd-example-modal-lg" id="ModalEdit<?php echo $row['ID_galeria'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+     <div class="modal fade bd-example-modal-lg" id="ModalEdit<?php echo $row['ID_galeria']?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
 <div class="modal-header"> Actualizar </div>
@@ -148,7 +148,7 @@ $query=mysqli_query($con,$sql);
 <div class="container">
 
 
-<form  enctype="multipart/form-data" id="frmajax<?php echo $row['ID_galeria'] ?>" method="POST" action="cruds/actualizarGaleria.php">
+<form  enctype="multipart/form-data" id="frmajax<?php echo $row['ID_galeria'] ?>" method="POST" action="cruds/galeria/actualizarGaleria.php">
                     
                     <input type="hidden" name="ID_galeria1" value="<?php echo $row['ID_galeria']  ?>">
                     <label>nombreimagen:</label>
@@ -219,7 +219,7 @@ $query=mysqli_query($con,$sql);
                 </table>
 
                 <a type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-primary text-center"
-                    value="AGREGAR BLOG" href="agregarImagen.php">AGREGAR IMAGEN</a>
+                    value="AGREGAR BLOG" href="cruds/galeria/agregarImagen.php">AGREGAR IMAGEN</a>
             </div>
 
 
@@ -247,7 +247,7 @@ $query=mysqli_query($con,$sql);
 
 <script  src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></script>
 <script  src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-<script src="app.js"></script>
+<script src="../js/app.js"></script>
 
     </script>
 

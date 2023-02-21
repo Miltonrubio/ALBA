@@ -4,7 +4,7 @@
 //Estas lfotoas sirven para crear una conexion con la BD para poder agregar un Administrador nuevo
 
 
-include("../conexion.php");
+include("../../conexion.php");
 $con=conectar();
 
 
@@ -34,12 +34,18 @@ $foto= filter_input(INPUT_POST, 'foto');
                                                 move_uploaded_file($temp,"C:/xampp/htdocs/Alba/img/galeria/$imagen");
                                            
                                           
-                                                echo "<script>   window.location='../../index.html'; </script>";
+                                                echo "<script>  
+                                                history.back();
+                                                alert('Se enviaron los datos');
+                                                </script>";
 
 
                                         } else {
                                             //Si la consulta no se logro completar, se nos mostrara un mensaje de error
-                                            echo "Error: " . mysqli_error($con);
+                                            echo "<script>  
+                                            history.back();
+                                            alert('No se enviaron los datos');
+                                            </script>";
                                         }
 
                                     
