@@ -47,7 +47,7 @@
                     <div class="card">
                         <div class="card-body">
                             
-                            <form enctype="multipart/form-data" id="formulario" method="post" action="cruds/insertarImagen.php" class="row g-3 a">
+                            <form enctype="multipart/form-data" id="formulario" method="post" action="insertarImagen.php" class="row g-3 a">
 
                          
                                     <!-- Campo nombres -->

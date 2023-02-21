@@ -1,6 +1,6 @@
 <?php
 
-include("../conexion.php");
+include("../../conexion.php");
 $con=conectar();
 
 
@@ -31,8 +31,9 @@ $foto= filter_input(INPUT_POST, 'imagen1');
 
 $query=mysqli_query($con,$sql);
 
-if($query){
-     echo '<script>  window.location.replace("../galeria.php");  </script>';
-    
-    }
+echo "<script>  
+history.back();
+alert('Se enviaron los datos');
+</script>";
+
 ?>
