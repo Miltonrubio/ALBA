@@ -59,7 +59,7 @@
                                         </div>
 
                                         <div class="col-md-12">
-                                            <label for="formFile" class="form-label">Miniatura del blog (500x500 px)</label>
+                                            <label for="formFile" class="form-label">Imagen de galeria </label>
                                             <input class="form-control" type="file" id="foto" name="foto" Required>
                                         </div>
 

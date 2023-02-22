@@ -193,7 +193,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .background {
     width: 100%;
-    background-image: url(/img/ALBA_WEB_ELEMENTS-04.png);
+    background-image: url(../img/ALBA_WEB_ELEMENTS-04.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -715,7 +715,7 @@ form {
 
 footer {
     width: 100%;
-    background-image: url(/img/ALBA_WEB_ELEMENTS-31.png);
+    background-image: url(../img/ALBA_WEB_ELEMENTS-31.png);
     background-size: cover;
     background-repeat: no-repeat;
 }

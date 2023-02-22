@@ -18,7 +18,11 @@ $query = "INSERT INTO `contacto`(`nombre`, `correo`, `celular`, `comentarios`, `
 
 if (mysqli_query($con, $query)) {
 
-  echo '<script>  window.location.replace("../../mensajes.php");  </script>';
+
+  echo "<script>  
+  history.back();
+  alert('Se enviaron los datos');
+  </script>";
 
 } else {
   //Si la consulta no se logro completar, se nos mostrara un mensaje de error
