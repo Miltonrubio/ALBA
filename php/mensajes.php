@@ -14,10 +14,12 @@ $query = mysqli_query($con, $sql);
 
 <head>
 
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajes Alba</title>
+    
+    <link rel="shortcut icon" href="../img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -30,6 +32,9 @@ $query = mysqli_query($con, $sql);
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="../css/menulateral.css">
+        <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 
@@ -40,12 +45,47 @@ $query = mysqli_query($con, $sql);
 
 
 
-<body>
 
+<body id="body">
 
-    <br>
-    <br>
-    <div>
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+        <div class="options__menu">
+
+            <a href="galeria.php" >
+                <div class="option">
+                <i class="fa-solid fa-image" title="Galeria"></i>
+                    <h4>Galeria</h4>
+                </div>
+            </a>
+
+            <a href="mensajes.php" class="selected">
+                <div class="option">
+                <i class="fa-solid fa-envelope" title= "Contacto"></i>
+                    <h4>Contacto</h4>
+                </div>
+            </a>
+
+            <a href="salir.php">
+                <div class="option">
+                <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
+                    <h4>Salir</h4>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <main>
+<br><br><br><br>
+    <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8 col-sm-12">
@@ -182,10 +222,8 @@ $query = mysqli_query($con, $sql);
         </div>
 
     </div>
-
-</body>
-
-</html>
+                    
+    </main>
 
 
 
@@ -197,6 +235,7 @@ $query = mysqli_query($con, $sql);
 <script src="../css/assets/bootstrap.min.js"></script>
 
 
+<script src="../js/menulateral.js"></script>
 
 <script src="../js/app.js"></script>
 
