@@ -1,7 +1,17 @@
 //menu para dispositivos moviles
 let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+let navbar = document.querySelector('.alba_bar');
 
+function cambiarHrefEnlace() {
+    if (window.innerWidth <= 1300) {
+      document.getElementById("cambio").href = "#Galeria";
+    } else {
+      document.getElementById("cambio").href = "#Proyectos";
+    }
+  }
+  
+  window.onresize = cambiarHrefEnlace;
+  
 
 menu.onclick = () => {
     menu.classList.toggle('bx-x');
@@ -13,11 +23,11 @@ window.onscroll = function () {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         //Si se cumple la condicion se aplicara el estilo de la clase navbar-scrolled al header
         document.querySelector("header").classList.add("navbar-scrolled");
-        document.querySelector(".navbar").classList.add("navbar-color");
+        document.querySelector(".alba_bar").classList.add("navbar-color");
         //Si no se cumple la condicion no aplicara los estilos
     } else {
         document.querySelector("header").classList.remove("navbar-scrolled");
-        document.querySelector(".navbar").classList.remove("navbar-color");
+        document.querySelector(".alba_bar").classList.remove("navbar-color");
     }
 };
 

@@ -2,7 +2,7 @@ particlesJS(
     {
         "particles": {
           "number": {
-            "value": 100,
+            "value": 40,
             "density": {
               "enable": true,
               "value_area": 700
@@ -60,7 +60,7 @@ particlesJS(
             "random": true,
             "straight": false,
             "out_mode": "out",
-            "bounce": false,
+            "bounce": true,
             "attract": {
               "enable": false,
               "rotateX": 600,

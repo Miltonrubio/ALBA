@@ -34,10 +34,7 @@ $foto= filter_input(INPUT_POST, 'foto');
                                                 move_uploaded_file($temp,"C:/xampp/htdocs/Alba/img/galeria/$imagen");
                                            
                                           
-                                                echo "<script>  
-                                                history.back();
-                                                alert('Se enviaron los datos');
-                                                </script>";
+        echo '<script>  window.location.replace("../../galeria.php");  </script>';
 
 
                                         } else {
