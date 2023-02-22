@@ -8,7 +8,7 @@ $con=conectar();
 
 
 
-$sql="SELECT @rownum:=@rownum+1 nro, imagen FROM galeria, (SELECT @rownum:=0) r LIMIT 7";
+$sql="SELECT @rownum:=@rownum+1 nro, ID_galeria, imagen FROM galeria, (SELECT @rownum:=0) r LIMIT 7";
 
 
 //"SELECT * FROM blog JOIN usuarios USING(ID_usuario) ORDER BY DESC "
@@ -37,13 +37,16 @@ $query1=mysqli_query($con,$sql);
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/normalize.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
-<body>
+<body  onload="agregarClase()">
     <!--Esto es el menu inicial-->
     <header>
         <a href="#Inicio" class="logo"><img src="img/ALBA_WEB_ELEMENTS-03.png" alt="" class="alba_logo"></a>
@@ -333,16 +336,13 @@ $query1=mysqli_query($con,$sql);
                         <p class=first__subtitle>Galería</p>
                         <img src="img/ALBA_WEB_ELEMENTS-07.png" alt="gallery__elemtent" class="gallery__img_title">
                     </div>
-                    <div class="cards">
-                        <div class="slide img-a">
-                            <img src="img/ALBA_WEB_ELEMENTS-23.png">
-                        </div>
+                    <div class="cards"  >
 
 
                         <?php
                                             while($row=mysqli_fetch_array($query)){
                                         ?>
-                        <div class="slide">
+                        <div class="slide" id="elemento<?php echo $row['nro']?>">
                             <img src="img/galeria/<?php echo $row['imagen']?>">
                         </div>
                        
@@ -353,7 +353,6 @@ $query1=mysqli_query($con,$sql);
                 </div>
             </div>
         </section>
-
 
         <section class="container" id="Galeria">
             <div class="row">
@@ -552,6 +551,16 @@ $query1=mysqli_query($con,$sql);
     <script type="text/javascript" src="js/particulas.js"></script>
     <!--Este script tiene las animaciones de toda la página y esta en la carpeta de JS-->
     <script type="text/javascript" src="js/main.js"></script>
+
+    
+    <script>
+		function agregarClase() {
+			var elemento = document.getElementById("elemento1");
+			elemento.classList.add("img-a");
+		}
+	</script>
+
+
 </body>
 
 </html>
