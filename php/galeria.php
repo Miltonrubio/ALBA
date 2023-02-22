@@ -13,17 +13,24 @@ $query=mysqli_query($con,$sql);
 
 <head>
     
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Alba</title>
+    
+    <link rel="shortcut icon" href="../img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/menulateral.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
@@ -35,18 +42,66 @@ $query=mysqli_query($con,$sql);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+
+
 </head>
 
 
+<body id="body">
 
-<body>
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
 
-    <div>
+    <div class="menu__side" id="menu_side">
+
+
+    <!--
+
+        <div class="name__page">
+        <i class="fa-solid fa-image"></i>
+            <h4>@Name User</h4>
+        </div>
+-->
+        <div class="options__menu">
+
+            <a href="galeria.php" class="selected">
+                <div class="option">
+                <i class="fa-solid fa-image" title="Galeria"></i>
+                    <h4>Galeria</h4>
+                </div>
+            </a>
+
+            <a href="mensajes.php">
+                <div class="option">
+                <i class="fa-solid fa-envelope" title= "Contacto"></i>
+                    <h4>Contacto</h4>
+                </div>
+            </a>
+
+            <a href="salir.php">
+                <div class="option">
+                <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
+                    <h4>Salir</h4>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+
+    <main>
+      <br><br>    <br><br>
+      <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8 col-sm-12">
             <table id="ejemplo" class="table table-striped" style="width:100%">
-                    <h1 class="titulo2">Galeria</h1>
                     <thead class="table-success table-striped">
                         <tr>
                             <th>ID</th>
@@ -225,14 +280,11 @@ $query=mysqli_query($con,$sql);
 
             <div class="col-md-"></div>
         </div>
+        </div>
 
     </div>
 
-</body>
-
-</html>
-
-
+    </main>
 
 
 
@@ -240,6 +292,8 @@ $query=mysqli_query($con,$sql);
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 
+
+<script src="../js/menulateral.js"></script>
 
 <script src="../css/assets/popper.min.js"></script>
 <script src="../css/assets/bootstrap.min.js"></script>
