@@ -33,11 +33,11 @@ $query1=mysqli_query($con,$sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alba web</title>
-    <link rel="shortcut icon" href="/img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -46,7 +46,7 @@ $query1=mysqli_query($con,$sql);
 <body>
     <!--Esto es el menu inicial-->
     <header>
-        <a href="#Inicio" class="logo"><img src="/img/ALBA_WEB_ELEMENTS-03.png" alt="" class="alba_logo"></a>
+        <a href="#Inicio" class="logo"><img src="img/ALBA_WEB_ELEMENTS-03.png" alt="" class="alba_logo"></a>
 
         <ul class="alba_bar">
             <li><a href="#Inicio">Inicio</a></li>
@@ -59,9 +59,9 @@ $query1=mysqli_query($con,$sql);
         </ul>
 
         <div class="main">
-            <a href="#" class="user"><img src="/img/facebook.svg" alt="" srcset=""></a>
-            <a href="#" class="user"><img src="/img/youtube.svg" alt="" srcset=""></a>
-            <a href="#" class="user"><img src="/img/linkedin.svg" alt="" srcset=""></a>
+            <a href="#" class="user"><img src="img/facebook.svg" alt="" srcset=""></a>
+            <a href="#" class="user"><img src="img/youtube.svg" alt="" srcset=""></a>
+            <a href="#" class="user"><img src="img/linkedin.svg" alt="" srcset=""></a>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
     </header>
@@ -92,7 +92,7 @@ $query1=mysqli_query($con,$sql);
                         <div class="about__us_texts">
                             <h1 class="about__us_title">Nosotros</h1>
                             <h4 class="about__us_subtitle">Domótica/Inmótica</h4>
-                            <img src="/img/ALBA_WEB_ELEMENTS-07.png" alt="element" class="element">
+                            <img src="img/ALBA_WEB_ELEMENTS-07.png" alt="element" class="element">
                             <p class="about__us_paragraph">
                                 Estamos convencidos que hoy en día cualquiera que lo
                                 deseé tiene acceso a la domotización y automatización
@@ -110,7 +110,7 @@ $query1=mysqli_query($con,$sql);
                         </div>
                     </div>
                     <div class="col-6 media__img">
-                        <img src="/img/ALBA_WEB_ELEMENTS-08.png" alt="about__us_img" class="element__1">
+                        <img src="img/ALBA_WEB_ELEMENTS-08.png" alt="about__us_img" class="element__1">
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@ $query1=mysqli_query($con,$sql);
             <div class="container__kits">
                 <div class="alba__kits">
                     <article class="article__kit">
-                        <img src="/img/ALBA_WEB_ELEMENTS-09.png" alt="" class="img__kits" onclick="openModal(modalAdd1)">
+                        <img src="img/ALBA_WEB_ELEMENTS-09.png" alt="" class="img__kits" onclick="openModal(modalAdd1)">
                         <h3 class="kits__title">alba</h3>
                         <h3><span class="color__dif kits__title">home</span></h3>
                         <div class="modal" id="modalHome">
@@ -142,7 +142,7 @@ $query1=mysqli_query($con,$sql);
                         </div>
                     </article>
                     <article class="article__kit">
-                        <img src="/img/ALBA_WEB_ELEMENTS-10.png" alt="" class="img__kits" onclick="openModal(modalAdd2)">
+                        <img src="img/ALBA_WEB_ELEMENTS-10.png" alt="" class="img__kits" onclick="openModal(modalAdd2)">
                         <h3 class="kits__title">alba</h3>
                         <h3><span class="color_work kits__title">work</span></h3>
                         <div class="modal" id="modalWork">
@@ -164,7 +164,7 @@ $query1=mysqli_query($con,$sql);
                         </div>
                     </article>
                     <article class="article__kit">
-                        <img src="/img/ALBA_WEB_ELEMENTS-11.png" alt="" class="img__kits" onclick="openModal(modalAdd3)">
+                        <img src="img/ALBA_WEB_ELEMENTS-11.png" alt="" class="img__kits" onclick="openModal(modalAdd3)">
                         <h3 class="kits__title">alba</h3>
                         <h3><span class="color_play kits__title">play</span></h3>
                         <div class="modal" id="modalPlay">
@@ -186,7 +186,7 @@ $query1=mysqli_query($con,$sql);
                         </div>
                     </article>
                     <article class="article__kit">
-                        <img src="/img/ALBA_WEB_ELEMENTS-12.png" alt="" class="img__kits" onclick="openModal(modalAdd4)">
+                        <img src="img/ALBA_WEB_ELEMENTS-12.png" alt="" class="img__kits" onclick="openModal(modalAdd4)">
                         <h3 class="kits__title">alba</h3>
                         <h3><span class="color_experiencie kits__title">experiencie</span></h3>
                         <div class="modal" id="modalExperiencie">
@@ -217,39 +217,39 @@ $query1=mysqli_query($con,$sql);
                     <div class="partners__text">
                         <h1 class="first__title">Familia <span class="color__dif">Alba</span></h1>
                         <p class="first__subtitle">Aliados y proveedores</p>
-                        <img src="/img/ALBA_WEB_ELEMENTS-07.png" alt="partners__img">
+                        <img src="img/ALBA_WEB_ELEMENTS-07.png" alt="partners__img">
                     </div>
                     <div class="slider">
                         <div class="slide-track">
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                             <div class="slide">
-                                <img src="/img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
+                                <img src="img/ALBA_WEB_ELEMENTS-13.png" alt="" class="partners-slide">
                             </div>
                         </div>
                     </div>
@@ -264,11 +264,11 @@ $query1=mysqli_query($con,$sql);
                         <div class="texts__services">
                             <h1 class="first__title">Nuestro <span class="color__dif">Portafolio</span></h1>
                             <p class="first__subtitle">Servicios</p>
-                            <img src="/img/ALBA_WEB_ELEMENTS-07.png" alt="services__img" class="services__img_title">
+                            <img src="img/ALBA_WEB_ELEMENTS-07.png" alt="services__img" class="services__img_title">
                         </div>
                         <div class="about__services">
                             <article class="content__services">
-                                <img src="/img/ALBA_WEB_ELEMENTS-15.png" alt="services__img" class="services__img">
+                                <img src="img/ALBA_WEB_ELEMENTS-15.png" alt="services__img" class="services__img">
                                 <h3 class="services__title">Diseño de proyecto</h3>
                                 <div class="services-paragraph-content">
                                     <p class="services__paragraph">
@@ -278,7 +278,7 @@ $query1=mysqli_query($con,$sql);
                                 </div>
                             </article>
                             <article class="content__services">
-                                <img src="/img/ALBA_WEB_ELEMENTS-16.png" alt="services__img" class="services__img">
+                                <img src="img/ALBA_WEB_ELEMENTS-16.png" alt="services__img" class="services__img">
                                 <h3 class="services__title">Productos</h3>
                                 <div class="services-paragraph-content">
                                     <p class="services__paragraph">
@@ -289,7 +289,7 @@ $query1=mysqli_query($con,$sql);
                                 </div>
                             </article>
                             <article class="content__services">
-                                <img src="/img/ALBA_WEB_ELEMENTS-17.png" alt="services__img" class="services__img">
+                                <img src="img/ALBA_WEB_ELEMENTS-17.png" alt="services__img" class="services__img">
                                 <h3 class="services__title">Implementación</h3>
                                 <div class="services-paragraph-content">
                                     <p class="services__paragraph">
@@ -302,7 +302,7 @@ $query1=mysqli_query($con,$sql);
                                 </div>
                             </article>
                             <article class="content__services">
-                                <img src="/img/ALBA_WEB_ELEMENTS-18.png" alt="services__img" class="services__img">
+                                <img src="img/ALBA_WEB_ELEMENTS-18.png" alt="services__img" class="services__img">
                                 <h3 class="services__title">Soporte</h3>
                                 <div class="services-paragraph-content">
                                     <p class="services__paragraph">
@@ -331,33 +331,24 @@ $query1=mysqli_query($con,$sql);
                     <div class="galley__texts">
                         <h1 class=first__title>Productos & <span class=color__dif>Proyectos</span></h1>
                         <p class=first__subtitle>Galería</p>
-                        <img src="/img/ALBA_WEB_ELEMENTS-07.png" alt="gallery__elemtent" class="gallery__img_title">
+                        <img src="img/ALBA_WEB_ELEMENTS-07.png" alt="gallery__elemtent" class="gallery__img_title">
                     </div>
                     <div class="cards">
                         <div class="slide img-a">
-                            <img src="/img/ALBA_WEB_ELEMENTS-23.png">
+                            <img src="img/ALBA_WEB_ELEMENTS-23.png">
                         </div>
+
+
+                        <?php
+                                            while($row=mysqli_fetch_array($query)){
+                                        ?>
                         <div class="slide">
-                            <img src="/img/ALBA_WEB_ELEMENTS-24.png">
+                            <img src="img/galeria/<?php echo $row['imagen']?>">
                         </div>
-                        <div class="slide">
-                            <img src="/img/ALBA_WEB_ELEMENTS-25.png">
-                        </div>
-                        <div class="slide">
-                            <img src="/img/ALBA_WEB_ELEMENTS-26.png">
-                        </div>
-                        <div class="slide">
-                            <img src="/img/ALBA_WEB_ELEMENTS-27.png">
-                        </div>
-                        <div class="slide">
-                            <img src="/img/ALBA_WEB_ELEMENTS-28.png">
-                        </div>
-                        <div class="slide">
-                            <img src="/img/ALBA_WEB_ELEMENTS-29.png">
-                        </div>
-                        <div class="slide">
-                            <img src="/img/ALBA_WEB_ELEMENTS-30.png">
-                        </div>
+                       
+                        <?php 
+                                            }
+                                        ?>
                     </div>
                 </div>
             </div>
@@ -370,7 +361,7 @@ $query1=mysqli_query($con,$sql);
                     <div class="galley__movile__texts">
                         <h1 class=first__title>Productos & <span class=color__dif>Proyectos</span></h1>
                         <p class=first__subtitle>Galería</p>
-                        <img src="/img/ALBA_WEB_ELEMENTS-07.png" alt="gallery__elemtent" class="gallery__img_title">
+                        <img src="img/ALBA_WEB_ELEMENTS-07.png" alt="gallery__elemtent" class="gallery__img_title">
                     </div>
                     <div class="carousel">
                         <div class="carrusel-list" id="carrusel-list">
@@ -385,78 +376,26 @@ $query1=mysqli_query($con,$sql);
                                 </svg>
                             </button>
                             <div class="carrusel-track" id="track">
+
+                            <?php
+                                            while($row1=mysqli_fetch_array($query1)){
+                                        ?>
                                 <div class="carrusel">
                                     <div>
                                         <a href="#">
                                             <picture>
-                                                <img src="/img/ALBA_WEB_ELEMENTS-23.png" alt="imagen">
+                                            <img src="img/galeria/<?php echo $row1['imagen']?>">
                                             </picture>
                                         </a>
                                     </div>
+
+                                    
                                 </div>
-                                <div class="carrusel">
-                                    <div>
-                                        <a href="#">
-                                            <picture>
-                                                <img src="/img/ALBA_WEB_ELEMENTS-24.png" alt="imagen">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="carrusel">
-                                    <div>
-                                        <a href="#">
-                                            <picture>
-                                                <img src="/img/ALBA_WEB_ELEMENTS-25.png" alt="imagen">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="carrusel">
-                                    <div>
-                                        <a href="#">
-                                            <picture>
-                                                <img src="/img/ALBA_WEB_ELEMENTS-26.png" alt="imagen">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="carrusel">
-                                    <div>
-                                        <a href="#">
-                                            <picture>
-                                                <img src="/img/ALBA_WEB_ELEMENTS-27.png" alt="imagen">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="carrusel">
-                                    <div>
-                                        <a href="#">
-                                            <picture>
-                                                <img src="/img/ALBA_WEB_ELEMENTS-28.png" alt="imagen">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="carrusel">
-                                    <div>
-                                        <a href="#">
-                                            <picture>
-                                                <img src="/img/ALBA_WEB_ELEMENTS-29.png" alt="imagen">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="carrusel">
-                                    <div>
-                                        <a href="#">
-                                            <picture>
-                                                <img src="/img/ALBA_WEB_ELEMENTS-30.png" alt="imagen">
-                                            </picture>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php 
+                                            }
+                                        ?>
+                               
+                     
                             </div>
                             <button class="carrusel-arrow carrusel-next" id="button-next" data-button="button-next"
                                 onclick="app.processingButton(event)">
@@ -480,7 +419,7 @@ $query1=mysqli_query($con,$sql);
                     <div class="alba__contact">
                         <div class="contact__texts">
                             <h1 class="title-contact">Contáctanos</h1>
-                            <img src="/img/ALBA_WEB_ELEMENTS-07.png" alt="" class="contact__element">
+                            <img src="img/ALBA_WEB_ELEMENTS-07.png" alt="" class="contact__element">
                             <p class="contact__paragraph">
                                 Para cualquier duda o necesidad de información adicional, por favor no dudes en ponerte
                                 en
@@ -495,7 +434,8 @@ $query1=mysqli_query($con,$sql);
                         </div>
 
                         <div class="contact__form">
-                            <form>
+                        <form enctype="multipart/form-data" id="frmajax" method="POST" action="php/cruds/contactos/agregarContacto.php">
+                            
                                 <input type="text" id="name" name="name" placeholder="Nombre" required
                                     class="input__required">
                                 <input type="tel" id="phone" name="phone" placeholder="Teléfono" required
@@ -514,6 +454,47 @@ $query1=mysqli_query($con,$sql);
         </section>
     </main>
 
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#frmajax").on("submit", function (event) {
+
+                event.preventDefault();
+
+                var form = $('#frmajax')[0];
+                var formData = new FormData(form);
+
+
+                $.ajax({
+                    type: $(this).attr("method"),
+                    url: $(this).attr("action"),
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+
+                    success: function (r) {
+                        if (r == 1) {
+                            alert("Se enviaron los datos");
+                        } else {
+                            alert("Se enviaron los datos");
+                        }
+                    }
+                });
+
+                return false;
+            });
+        });
+    </script>
+
+
+
+
+
+
     <footer class="container-fluid media__footer">
         <div class="row">
             <div class="col-12">
@@ -527,7 +508,7 @@ $query1=mysqli_query($con,$sql);
                         </ul>
                     </div>
                     <div class="media">
-                        <img src="/img/ALBA_WEB_ELEMENTS-19.png" alt="" srcset="" class="p__logo">
+                        <img src="img/ALBA_WEB_ELEMENTS-19.png" alt="" srcset="" class="p__logo">
                         <ul class="logos__media">
                             <li><a href="http://"><img src="img/facebook.svg" alt="" class="s__logo"></a></li>
                             <li><a href="http://"><img src="img/youtube.svg" alt="" class="s__logo"></a></li>
@@ -566,11 +547,11 @@ $query1=mysqli_query($con,$sql);
     </footer>
     
     <!--Este script tiene las particulas y esta en la carpeta de JS-->
-    <script type="text/javascript" src="/js/particles.min.js"></script>
+    <script type="text/javascript" src="js/particles.min.js"></script>
     <!--Este script tiene la configuración de las particulas y esta en la carpeta de JS-->
-    <script type="text/javascript" src="/js/particulas.js"></script>
+    <script type="text/javascript" src="js/particulas.js"></script>
     <!--Este script tiene las animaciones de toda la página y esta en la carpeta de JS-->
-    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

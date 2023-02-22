@@ -35,8 +35,8 @@ window.onscroll = function () {
 // Toma la imagen de la clase logo
 const logoImage = document.querySelector('.alba_logo');
 // Define la ruta de la imagen principal y a la secundaria
-const defaultLogo = '/img/ALBA_WEB_ELEMENTS-03.png';
-const scrolledLogo = '/img/ALBA_WEB_ELEMENTS-02.png';
+const defaultLogo = 'img/ALBA_WEB_ELEMENTS-03.png';
+const scrolledLogo = 'img/ALBA_WEB_ELEMENTS-02.png';
 
 window.addEventListener('scroll', () => {
     // Verifica que el usuario scrolle más de 50 px
