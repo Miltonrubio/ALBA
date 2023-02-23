@@ -247,7 +247,7 @@ if(isset($_SESSION['usuario'])){
                                             placeholder="Correo" value="<?php echo $row['correo']?>">
                                         <label>Rol: </label>
                                         <input type="text" class="form-control mb-3" name="cargo1" placeholder="Cargo"
-                                            value="<?php echo $row['cargo']?> ">
+                                            value="<?php echo $row['cargo']?>">
                                         <label>Celular:</label>
                                         <input type="text" class="form-control mb-3" name="celular1"
                                             placeholder="Celular" value="<?php echo $row['celular']?>">

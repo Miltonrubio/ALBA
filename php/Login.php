@@ -17,7 +17,7 @@ $usu=$_POST['correo'];
 //pide el password
 $pass=$_POST['clave'];
 //indica el rol del correo y la clave tales como instalador, administrador etc.
-$usuarios=$mysqli->query("Select * from usuarios Where correo='$usu' AND clave='$pass'");
+$usuarios=$mysqli->query("SELECT * FROM usuarios WHERE correo='$usu' AND clave='$pass'");
 if ($usuarios->num_rows==1):
   /*valida que si hay un usuario que coincidan sus datos, ejecute la consulta 
   y guarde los resultados en la variable datos*/

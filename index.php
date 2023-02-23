@@ -8,7 +8,7 @@ $con=conectar();
 
 
 
-$sql="SELECT @rownum:=@rownum+1 nro, ID_galeria, imagen FROM galeria, (SELECT @rownum:=0) r LIMIT 7";
+$sql="SELECT @rownum:=@rownum+1 nro, ID_galeria, imagen FROM galeria, (SELECT @rownum:=0) r WHERE mostrar='Si' LIMIT 8";
 
 
 //"SELECT * FROM blog JOIN usuarios USING(ID_usuario) ORDER BY DESC "
@@ -42,7 +42,7 @@ $query1=mysqli_query($con,$sql);
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
-<body  onload="agregarClase()">
+<body >
     <!--Esto es el menu inicial-->
     <header>
         <a href="#Inicio" class="logo"><img src="img/ALBA_WEB_ELEMENTS-03.png" alt="" class="alba_logo"></a>
@@ -333,14 +333,21 @@ $query1=mysqli_query($con,$sql);
                         <img src="img/ALBA_WEB_ELEMENTS-07.png" alt="gallery__elemtent" class="gallery__img_title">
                     </div>
                     <div class="cards"  >
-
-
                         <?php
                                             while($row=mysqli_fetch_array($query)){
                                         ?>
-                        <div class="slide" id="elemento<?php echo $row['nro']?>">
+                        <div class="slide" id="elemento<?php echo $row['nro']?>"  onload="agregarClase()">
                             <img src="img/galeria/<?php echo $row['imagen']?>">
+                          
                         </div>
+
+
+                        <script>
+		function agregarClase() {
+			//var elemento = document.getElementById("elemento1");
+			//elemento.classList.add("img-a");
+		}
+	</script>
                        
                         <?php 
                                             }
@@ -371,7 +378,6 @@ $query1=mysqli_query($con,$sql);
                                 </svg>
                             </button>
                             <div class="carrusel-track" id="track">
-
                             <?php
                                             while($row1=mysqli_fetch_array($query1)){
                                         ?>
@@ -549,12 +555,7 @@ $query1=mysqli_query($con,$sql);
     <script type="text/javascript" src="js/main.js"></script>
 
     
-    <script>
-		function agregarClase() {
-			var elemento = document.getElementById("elemento1");
-			elemento.classList.add("img-a");
-		}
-	</script>
+
 
 
 </body>
