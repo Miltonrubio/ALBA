@@ -1,3 +1,22 @@
+<?php 
+include("../php/conexion.php");
+$con=conectar();
+
+
+$id=$_GET['id'];
+
+//$sql="SELECT *, date_format(fecha, '%d-%m-%Y') as fecha_formateada FROM blog JOIN usuarios USING(ID_usuario) WHERE ID_blog=$id";
+$sql="SELECT * FROM usuarios WHERE ID_usuario=$id";
+
+//http://localhost/realba/html/Employees.php?id=1
+
+//"SELECT * FROM blog JOIN usuarios USING(ID_usuario) ORDER BY DESC "
+$query=mysqli_query($con,$sql);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,12 +32,15 @@
 </head>
 
 <body class="employees__body">
-    
+<?php
+                                          
+                                          while($row=mysqli_fetch_array($query)){
+                                  ?>
     <div class="card-container">
         <img src="../img/ALBA_WEB_ELEMENTS-01.png" alt="user" class="round">
-        <h3 class="card-name">Milton Jair Rubio Juarez</h3>
+        <h3 class="card-name"><?php echo $row['nombre']." ".$row['apellidos']?></h3>
         <h6 class="city">México</h6>
-        <p class="job">Ing Programador<br> Back-End Developer </p>
+        <p class="job">Ing Programador<br>     <?php  echo $row['cargo'] ?></p>
         <div class="skills">
             <h6>Habilidades</h6>
             <ul>
@@ -30,6 +52,8 @@
             </ul>
         </div>
     </div>
+    <?php } ?>
+
 </body>
 
 </html>

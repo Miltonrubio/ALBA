@@ -81,19 +81,20 @@ if(isset($_SESSION['usuario'])){
     <div class="menu__side" id="menu_side">
 
 
-    <!--
+    
 
-        <div class="name__page">
-        <i class="fa-solid fa-image"></i>
-            <h4>@Name User</h4>
-        </div>
--->
         <div class="options__menu">
 
-            <a href="galeria.php" class="selected">
+            <a href="galeria.php">
                 <div class="option">
                 <i class="fa-solid fa-image" title="Galeria"></i>
                     <h4>Galeria</h4>
+                </div>
+            </a>
+            <a href="galeria.php" class="selected">
+                <div class="option">
+                <i class="fa-solid fa-user" title="Galeria"></i>
+                    <h4>Usuarios</h4>
                 </div>
             </a>
 
@@ -123,21 +124,25 @@ if(isset($_SESSION['usuario'])){
     <div class="container">
     <div class="row">
         <div class="col-lg-4"></div>
+       
         <div class="col-lg-4">
+        <br><br> <br><br>
             <h1>Registrar nuevo</h1>
-            <form action="php/crud/insertar.php" method="POST">
-                <input type="text" class="form-control mb-3" name="Nombre" placeholder="Nombres" required>
-                <input type="text" class="form-control mb-3" name="Apellidos" placeholder="Apellidos">
+            <form action="cruds/usuarios/insertar.php" method="POST">
+                <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombres" required>
+                <input type="text" class="form-control mb-3" name="apellidos" placeholder="Apellidos">
 
-                <select id="inputState" class="form-select mb-3" name="Rol" placeholder="Rol">
-                    <option selected>Editor</option>
-                    <option>Admin</option>
+                <select id="inputState" class="form-select mb-3" name="cargo" placeholder="Cargo">
+                    <option selected>Becario</option>
+                    <option>CEO</option>
+                    <option>Familia Alba</option>
+                    <option>Secretaria</option>
                 </select>
 
                 <input type="number" maxlength="10" class="form-control mb-3" name="celular" placeholder="Celular"
                     required>
                     <input type="email"  class="form-control mb-3" name="correo" placeholder="Correo"    required>
-                <input type="password" minlength="8" class="form-control mb-3" name="Clave" placeholder="Clave"
+                <input type="password" minlength="8" class="form-control mb-3" name="clave" placeholder="Clave"
                     required>
                 <input type="submit" class="btn btn-primary">
             </form>
@@ -174,8 +179,7 @@ if(isset($_SESSION['usuario'])){
                             <?php  echo $row['ID_usuario']?>
                         </th>
                         <th>
-                            <?php  echo $row['nombre']?>    
-                            <?php  echo $row['apellidos']?>
+                            <?php  echo $row['nombre']." ".$row['apellidos']?>
                         </th>
                         <th disabled>
                             <?php  echo $row['cargo']?>
@@ -190,16 +194,16 @@ if(isset($_SESSION['usuario'])){
                             <?php  echo $row['clave']?>
                         </th>
                         <th><a class="btn btn-success" data-toggle="modal"
-                                data-target="#ModalVer<?php echo $row['ID_usuario'] ?>"><i
+                                data-target="#ModalVer<?php echo $row['ID_usuario']?>"><i
                                     class="bi bi-pencil-square"></i></a></th>
                         <th><a class="btn btn-danger" data-toggle="modal"
-                                data-target="#exampleModal<?php echo $row['ID_usuario'] ?>"><i
+                                data-target="#exampleModal<?php echo $row['ID_usuario']?>"><i
                                     class="bi bi-trash"></i></a></th>
                     </tr>
 
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal<?php echo $row['ID_usuario'] ?>" tabindex="-1"
+                    <div class="modal fade" id="exampleModal<?php echo $row['ID_usuario']?>" tabindex="-1"
                         role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -213,13 +217,13 @@ if(isset($_SESSION['usuario'])){
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                     <a class="btn btn-danger"
-                                        href="php/crud/delete.php?id=<?php echo $row['ID_usuario'] ?>">Eliminar</a>
+                                        href="php/crud/delete.php?id=<?php echo $row['ID_usuario']?>">Eliminar</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="modal fade bd-example-modal-lg" id="ModalVer<?php echo $row['ID_usuario'] ?>"
+                    <div class="modal fade bd-example-modal-lg" id="ModalVer<?php echo $row['ID_usuario']?>"
                         tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -228,33 +232,30 @@ if(isset($_SESSION['usuario'])){
 
 
 
-                                    <form id="frmajax<?php echo $row['ID_usuario'] ?>" method="POST">
+                                    <form id="frmajax<?php echo $row['ID_usuario']?>" method="POST">
 
                                         <input type="hidden" name="ID_usuario1"
                                             value="<?php echo $row['ID_usuario']  ?>">
                                         <label>Nombres:</label>
                                         <input type="text" class="form-control mb-3" name="nombre1"
-                                            placeholder="Nombres" value="<?php echo $row['Nombre']  ?>">
+                                            placeholder="Nombres" value="<?php echo $row['nombre']?>">
                                         <label>Apellidos:</label>
                                         <input type="text" class="form-control mb-3" name="apellidos1"
-                                            placeholder="Apellidos" value="<?php echo $row['Apellidos']  ?>">
+                                            placeholder="Apellidos" value="<?php echo $row['apellidos']?>">
                                             <label>Correo:</label>
-                                        <input type="text" class="form-control mb-3" name="correo1"
-                                            placeholder="Correo" value="<?php echo $row['correo']  ?>">
+                                        <input type="mail" class="form-control mb-3" name="correo1"
+                                            placeholder="Correo" value="<?php echo $row['correo']?>">
                                         <label>Rol: </label>
-                                        <input type="text" class="form-control mb-3" name="rol1" placeholder="Rol"
-                                            value="<?php echo $row['Rol']  ?> ">
-                                        <label>Usuario: </label>
-                                        <input type="text" class="form-control mb-3" name="usuario1"
-                                            placeholder="Usuario" value="<?php echo $row['usuario']  ?>">
+                                        <input type="text" class="form-control mb-3" name="cargo1" placeholder="Cargo"
+                                            value="<?php echo $row['cargo']?>">
                                         <label>Celular:</label>
                                         <input type="text" class="form-control mb-3" name="celular1"
-                                            placeholder="Celular" value="<?php echo $row['celular']  ?>">
+                                            placeholder="Celular" value="<?php echo $row['celular']?>">
                                         <label>Clave: </label>
                                         <input type="text" class="form-control mb-3" name="clave1" placeholder="Clave"
-                                            value="<?php echo $row['Clave']  ?>">
+                                            value="<?php echo $row['clave']?>">
 
-                                        <button id="btnguardar<?php echo $row['ID_usuario'] ?>"
+                                        <button id="btnguardar<?php echo $row['ID_usuario']?>"
                                             class="btn btn-success">Guardar datos</button>
                                     </form>
 
@@ -270,15 +271,13 @@ if(isset($_SESSION['usuario'])){
 
 
 
-
-
                     <script type="text/javascript">
                         $(document).ready(function () {
-                            $('#btnguardar<?php echo $row['ID_usuario'] ?>').click(function () {
+                            $('#btnguardar<?php echo $row['ID_usuario']?>').click(function () {
                                 var datos = $('#frmajax<?php echo $row['ID_usuario'] ?>').serialize();
                                 $.ajax({
                                     type: "POST",
-                                    url: "php/crud/update.php",
+                                    url: "cruds/usuarios/actualizar.php",
                                     data: datos,
                                     success: function (r) {
                                         if (r == 1) {

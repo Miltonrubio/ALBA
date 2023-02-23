@@ -50,31 +50,27 @@
         </div>
 
 
-
-
-
     
 
 <?php
-/*
+
 session_start();
 
 $Datos=$_SESSION['usuario'];
 
 
 if(isset($_SESSION['usuario'])){
-    if($_SESSION['usuario']['rol']=="Admin"){
-    echo '<script>  window.location.replace("admin.php");  </script>'; 
+    if($_SESSION['usuario']['cargo']=="CEO"){
+    echo '<script>  window.location.replace("../php/admin.php");  </script>'; 
     }
     
-    else if($_SESSION['usuario']['rol']=="Becario"){
-        echo '<script>  window.location.replace("php/galeria.php");  </script>'; 
+    else if($_SESSION['usuario']['cargo']=="Becario"){
+        echo '<script>  window.location.replace("../php/galeria.php");  </script>'; 
         } 
     
     }
-    */
+    
 ?>
-
 
 
         
