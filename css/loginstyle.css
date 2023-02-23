@@ -11,6 +11,10 @@ body {
     align-items: center;
 }
 
+.datos{
+    display: none;
+}
+
 
 /* Login Card */
 .login-card {

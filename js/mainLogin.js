@@ -4,7 +4,7 @@ jQuery(document).on("submit", "#formLg", function (event) {
   //iniciamos el ajax
   jQuery.ajax({
       //tomamos la direccion del php, el tipo del formulario, y el dataType, para aceptar json
-      url: "loginLogin.php",
+      url: "../php/Login.php",
       type: "POST",
       dataType: "json",
       //tomamos los datos del formulario y los serializamos
@@ -19,14 +19,14 @@ jQuery(document).on("submit", "#formLg", function (event) {
       //Si no hay error, se realizaran acciones dependiendo del tipo de rol
       if (!respuesta.error) {
         //Si el usuario es un admin se mostrara un mensaje y se mandara a la seccion de administrador
-        if (respuesta.Rol == "Admin") {
+        if (respuesta.cargo == "Becario") {
          
-          window.location.replace("admin.php"); 
+          window.location.replace("../php/galeria.php"); 
         }
         //Si el usuario es un desarrollador se mostrara un mensaje y se mandara a la seccion de desarrollador
-        else if (respuesta.Rol == "Editor") {
-          window.location.replace("crudBlog.php"); 
-        }
+        else if (respuesta.cargo == "CEO") {
+
+          window.location.replace("../php/admin.php");     }
       }
       //en caso de que haya un error, se cancelara el valor de "Validando" del boton
       else {

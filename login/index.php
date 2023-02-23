@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../css/loginstyle.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
-    <link rel="shortcut icon" href="ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
+    
+    <link rel="shortcut icon" href="../img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
     <script src="../js/mainLogin.js"></script>
     <title>Alba-login</title>
 </head>
@@ -18,7 +19,7 @@
     <div class="login-card-container">
         <div class="login-card">
             <div class="login-card-logo">
-                <img src="ALBA_WEB_ELEMENTS-01.png" alt="logo">
+                <img src="../img/ALBA_WEB_ELEMENTS-01.png" alt="logo">
             </div>
             <div class="login-card-header">
                 <h1>Inicia Sesión</h1>
@@ -27,13 +28,11 @@
             <form class="login-card-form" action="" id="formLg">
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded"></span>
-                    <input type="text" placeholder="Correo" id="emailForm" 
-                    autofocus required>
+                    <input type="text" placeholder="Correo" id="emailForm"  name="correo" autofocus required>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded"></span>
-                    <input type="password" placeholder="Contraseña" id="passwordForm"
-                     required>
+                    <input type="password" placeholder="Contraseña" id="passwordForm"  name="clave"  required>
                 </div>
                 <div class="form-item-other">
                     <div class="checkbox">
@@ -42,14 +41,43 @@
                     </div>
                     <a href="#">Olvide mi contraseña</a>
                 </div>
-                <button type="submit">Iniciar Sesión</button>
+
+                <button type="submit" value="Iniciar Sesión">Iniciar Sesión</button>
             </form>
             <div class="login-card-footer">
                 ¿No tienes una cuenta? <a href="#">Contactate con el soporte</a>
             </div>
         </div>
-    </div>
 
+
+
+
+
+    
+
+<?php
+/*
+session_start();
+
+$Datos=$_SESSION['usuario'];
+
+
+if(isset($_SESSION['usuario'])){
+    if($_SESSION['usuario']['rol']=="Admin"){
+    echo '<script>  window.location.replace("admin.php");  </script>'; 
+    }
+    
+    else if($_SESSION['usuario']['rol']=="Becario"){
+        echo '<script>  window.location.replace("php/galeria.php");  </script>'; 
+        } 
+    
+    }
+    */
+?>
+
+
+
+        
 </body>
 
 </html>
