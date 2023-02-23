@@ -21,10 +21,6 @@ $query1=mysqli_query($con,$sql);
 
 
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
