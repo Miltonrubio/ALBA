@@ -7,6 +7,15 @@ $sql = "SELECT * FROM contacto ORDER BY ID_contacto DESC ";
 $query = mysqli_query($con, $sql);
 
 
+session_start();
+
+$Datos=$_SESSION['usuario'];
+
+
+if($_SESSION['usuario']==""){
+  echo '<script>  window.location.replace("../login/index.php");  </script>'; 
+}
+
 ?>
 
 <!doctype html>
@@ -48,6 +57,11 @@ $query = mysqli_query($con, $sql);
 
 <body id="body">
 
+<?php 
+    if(isset($_SESSION['usuario'])){   
+   if($_SESSION['usuario']['cargo']!="CEO"){
+
+?>
     <header>
         <div class="icon__menu">
             <i class="fas fa-bars" id="btn_open"></i>
@@ -72,6 +86,7 @@ $query = mysqli_query($con, $sql);
                 </div>
             </a>
 
+            
             <a href="salir.php">
                 <div class="option">
                 <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
@@ -83,6 +98,66 @@ $query = mysqli_query($con, $sql);
 
     </div>
 
+
+
+    
+    <?php 
+
+       }else if($_SESSION['usuario']['cargo']=="CEO"){
+
+        ?>
+ 
+        
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+
+
+        <div class="options__menu">
+
+            <a href="galeria.php">
+                <div class="option">
+                <i class="fa-solid fa-image" title="Galeria"></i>
+                    <h4>Galeria</h4>
+                </div>
+            </a>
+            <a href="admin.php" >
+                <div class="option">
+                <i class="fa-solid fa-user" title="Usuarios"></i>
+                    <h4>Usuarios</h4>
+                </div>
+            </a>
+
+            <a href="mensajes.php" class="selected">
+                <div class="option" >
+                <i class="fa-solid fa-envelope" title= "Contacto"></i>
+                    <h4>Contacto</h4>
+                </div>
+            </a>
+
+            <a href="salir.php">
+                <div class="option">
+                <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
+                    <h4>Salir</h4>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+    <?php 
+
+       }
+    
+   }
+  
+   ?>
+ 
     <main>
 <br><br><br><br>
     <div class="container">
