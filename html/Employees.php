@@ -37,7 +37,7 @@ $query=mysqli_query($con,$sql);
                                           while($row=mysqli_fetch_array($query)){
                                   ?>
     <div class="card-container">
-        <img src="../img/ALBA_WEB_ELEMENTS-01.png" alt="user" class="round">
+        <img src="../img/usuarios/<?php  echo $row['foto']?>" alt="user" class="round">
         <h3 class="card-name"><?php echo $row['nombre']." ".$row['apellidos']?></h3>
         <h6 class="city">México</h6>
         <p class="job">Ing Programador<br>     <?php  echo $row['cargo'] ?></p>
