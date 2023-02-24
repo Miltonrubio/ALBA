@@ -504,6 +504,7 @@ $query1=mysqli_query($con,$sql);
                         <ul class="copy">
                             <li><a href="http://">Términos y condiciones</a></li>
                             <li><a href="http://">Aviso de privacidad</a></li>
+                            <li><a href="login/index.php">Iniciar Sesión</a></li>
                             <li><a href="http://">Aliados y marcas</a></li>
                             <li><a href="http://">Preguntas frecuentes</a></li>
                         </ul>
