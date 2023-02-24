@@ -58,33 +58,80 @@ if($_SESSION['usuario']==""){
 
 <body id="body">
 
+
+<?php 
+    if(isset($_SESSION['usuario'])){   
+   if($_SESSION['usuario']['cargo']!="CEO"){
+
+?>
     <header>
         <div class="icon__menu">
             <i class="fas fa-bars" id="btn_open"></i>
         </div>
     </header>
 
-    <?php 
-    if(isset($_SESSION['usuario'])){   
-   if($_SESSION['usuario']['cargo']!="CEO"){
-
-?>
- 
-
     <div class="menu__side" id="menu_side">
-    <!--
 
-        <div class="name__page">
-        <i class="fa-solid fa-image"></i>
-            <h4>@Name User</h4>
-        </div>
--->
         <div class="options__menu">
 
             <a href="galeria.php" class="selected">
                 <div class="option">
                 <i class="fa-solid fa-image" title="Galeria"></i>
                     <h4>Galeria</h4>
+                </div>
+            </a>
+
+            <a href="mensajes.php">
+                <div class="option">
+                <i class="fa-solid fa-envelope" title= "Contacto"></i>
+                    <h4>Contacto</h4>
+                </div>
+            </a>
+
+            
+            <a href="salir.php">
+                <div class="option">
+                <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
+                    <h4>Salir</h4>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    
+    <?php 
+
+       }else if($_SESSION['usuario']['cargo']=="CEO"){
+
+        ?>
+ 
+        
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+
+
+        <div class="options__menu">
+
+            <a href="galeria.php" class="selected">
+                <div class="option">
+                <i class="fa-solid fa-image" title="Galeria"></i>
+                    <h4>Galeria</h4>
+                </div>
+            </a>
+            <a href="admin.php" >
+                <div class="option">
+                <i class="fa-solid fa-user" title="Usuarios"></i>
+                    <h4>Usuarios</h4>
                 </div>
             </a>
 
@@ -105,20 +152,14 @@ if($_SESSION['usuario']==""){
         </div>
 
     </div>
-
-
-
-    
     <?php 
 
-       } 
-   
+       }
+    
    }
-
-   
-?>
+  
+   ?>
  
-
 
 
     <main>
