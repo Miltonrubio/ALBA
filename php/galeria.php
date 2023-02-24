@@ -6,6 +6,15 @@ $sql="SELECT * FROM galeria ";
 //"SELECT * FROM blog JOIN usuarios USING(ID_usuario) ORDER BY DESC "
 $query=mysqli_query($con,$sql);
 
+session_start();
+
+$Datos=$_SESSION['usuario'];
+
+
+if($_SESSION['usuario']==""){
+  echo '<script>  window.location.replace("../login/index.php");  </script>'; 
+}
+
 ?>
 
 <!doctype html>
@@ -55,9 +64,14 @@ $query=mysqli_query($con,$sql);
         </div>
     </header>
 
+    <?php 
+    if(isset($_SESSION['usuario'])){   
+   if($_SESSION['usuario']['cargo']!="CEO"){
+
+?>
+ 
+
     <div class="menu__side" id="menu_side">
-
-
     <!--
 
         <div class="name__page">
@@ -92,6 +106,18 @@ $query=mysqli_query($con,$sql);
 
     </div>
 
+
+
+    
+    <?php 
+
+       } 
+   
+   }
+
+   
+?>
+ 
 
 
 
