@@ -1,4 +1,14 @@
-<?php
+<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+		<script defer src="app.js"></script>
+	</head>
+	
+    
+    <?php
 
 include("../../conexion.php");
 $con=conectar();
@@ -28,8 +38,6 @@ $usuario = "$nombreConvert"."$res1"."$res";
 $imagen = $_FILES['imagen1']['name'];
 $tipo = $_FILES['imagen1']['type'];
 $temp  = $_FILES['imagen1']['tmp_name'];
-
-
 
 
 if (!empty($imagen)){

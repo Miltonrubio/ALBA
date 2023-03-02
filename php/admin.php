@@ -63,6 +63,8 @@ if(isset($_SESSION['usuario'])){
 
 
 
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+		<script defer src="cruds/usuarios/app.js"></script>
 </head>
 
 
@@ -252,7 +254,8 @@ if(isset($_SESSION['usuario'])){
                                             value="<?php echo $row['cargo']?>">
                                             <label>Usuario: </label>
                                         <input type="text" class="form-control mb-3" name="usuario"
-                                            value="<?php echo $row['usuario']?>" disabled>
+                                            value="<?php echo $row['usuario']?>" disabled id="link">
+                                        
 
                                             <label>Foto: </label>
                                         <input type="file" class="form-control mb-3" name="imagen1" placeholder="Foto"
