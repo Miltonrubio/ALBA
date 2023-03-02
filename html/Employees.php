@@ -6,7 +6,7 @@ $con=conectar();
 $id=$_GET['id'];
 
 //$sql="SELECT *, date_format(fecha, '%d-%m-%Y') as fecha_formateada FROM blog JOIN usuarios USING(ID_usuario) WHERE ID_blog=$id";
-$sql="SELECT * FROM usuarios WHERE ID_usuario=$id";
+$sql="SELECT * FROM usuarios WHERE usuario='$id'";
 
 //http://localhost/realba/html/Employees.php?id=1
 

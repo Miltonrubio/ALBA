@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-02-2023 a las 20:21:43
+-- Tiempo de generación: 02-03-2023 a las 01:47:37
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -100,8 +100,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID_usuario`, `nombre`, `apellidos`, `cargo`, `celular`, `correo`, `clave`, `foto`, `qr`, `usuario`) VALUES
-(1, 'Milton Jair', 'Rubio Juárez', 'Becario', '2382115594', 'a@gmail.com', 'ea', '', '[value-8]', 'Milton_JairRuz'),
-(2, '[value-2]', '[value-3]', 'CEO', '[value-5]', 'i@gmail.com', 'ea', '', '[value-8]', '[value-2][v]'),
+(1, 'Milton Jair', 'Rubio Juárez', 'Becario', '2382115594', 'a@gmail.com', 'ea', 'foto.jpg', '[value-8]', 'Milton_JairRuz'),
+(2, '[value-2]', '[value-3]', 'CEO', '[value-5]', 'i@gmail.com', 'ea', 'foto.jpg', '[value-8]', '[value-2][v]'),
 (3, 'Oswaldo ', 'Vega Gonzalez', 'Familia Alba', '2381124142', 'o@gmail.com', 'ea', '', 'qr', 'Oswaldo_Vez'),
 (4, 'Mario Alberto', 'Tort Becerril', 'CEO ', '23812415', 'm@gmail.com', 'ea', '', 'qr', 'Mario_AlbertoTol'),
 (5, 'asfasf', 'asfasf', 'Familia Alba', '12415', 'o2@gmail.com', 'ea', '', 'qr', 'asfasfasf');
