@@ -28,7 +28,8 @@ if($_SESSION['usuario']==""){
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Galeria Alba</title>
+
+  <title>Tables / General - NiceAdmin Bootstrap Template</title>
 
 
   <!-- Favicons --> 
@@ -113,41 +114,30 @@ if($_SESSION['usuario']==""){
         </a>
         <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="galeria.php" class="active">
+            <a href="tables-general.html" class="active">
               <i class="bi bi-circle"></i><span>Galeria</span>
             </a>
             </li>
             <li>
-            <a href="mensajes.php">
+            <a href="tables-general.html">
               <i class="bi bi-circle"></i><span>Mensajes</span>
             </a>
           </li>
         </ul>
       </li><!-- End Tables Nav -->
 
-      
-      <li class="nav-heading">usuarios</li>
-      <?php 
-    if(isset($_SESSION['usuario'])){   
-   if($_SESSION['usuario']['cargo']=="CEO"){
-
-?>
+      <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="admin.php">
+        <a class="nav-link collapsed" href="users-profile.html">
           <i class="bi bi-person"></i>
-          <span>Usuarios</span>
+          <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
 
-      <?php 
-} }
- ?>
-
-
       <li class="nav-item">
-        <a class="nav-link collapsed" href="salir.php">
+        <a class="nav-link collapsed" href="pages-login.html">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Salir</span>
         </a>
@@ -159,10 +149,6 @@ if($_SESSION['usuario']==""){
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
-
-
-
-  
 
     <div class="pagetitle">
       <h1>General Tables</h1>
@@ -194,7 +180,6 @@ if($_SESSION['usuario']==""){
                 <?php
                                             while($row=mysqli_fetch_array($query)){
                                         ?>
-
                   <tr>
                     <td> <?php  echo $row['nombreimagen']?></td>
                     <td>     <?php  echo $row['mostrar']?></td>
