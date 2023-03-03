@@ -1,3 +1,5 @@
+
+
 <?php 
 include("conexion.php");
 $con=conectar();
@@ -5,6 +7,9 @@ $con=conectar();
 $sql="SELECT * FROM galeria ";
 //"SELECT * FROM blog JOIN usuarios USING(ID_usuario) ORDER BY DESC "
 $query=mysqli_query($con,$sql);
+
+
+
 
 session_start();
 
@@ -17,209 +22,202 @@ if($_SESSION['usuario']==""){
 
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    
-
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria Alba</title>
-    
-    <link rel="shortcut icon" href="../img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Galeria Alba</title>
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Favicons --> 
+  <link rel="shortcut icon" href="../img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
+  <link href="../img/ALBA_WEB_ELEMENTS-01.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" href="../css/menulateral.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/simple-datatables/style.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+  <!-- Template Main CSS File -->
+  <link href="style.css" rel="stylesheet">
+
+
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 
 
 </head>
 
+<body>
 
-<body id="body">
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+  
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
 
 
-<?php 
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="forms-elements.html">
+              <i class="bi bi-circle"></i><span>Form Elements</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-layouts.html">
+              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-editors.html">
+              <i class="bi bi-circle"></i><span>Form Editors</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-validation.html">
+              <i class="bi bi-circle"></i><span>Form Validation</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="galeria.php" class="active">
+              <i class="bi bi-circle"></i><span>Galeria</span>
+            </a>
+            </li>
+            <li>
+            <a href="mensajes.php">
+              <i class="bi bi-circle"></i><span>Mensajes</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      
+      <li class="nav-heading">usuarios</li>
+      <?php 
     if(isset($_SESSION['usuario'])){   
-   if($_SESSION['usuario']['cargo']!="CEO"){
+   if($_SESSION['usuario']['cargo']=="CEO"){
 
 ?>
-    <header>
-        <div class="icon__menu">
-            <i class="fas fa-bars" id="btn_open"></i>
-        </div>
-    </header>
 
-    <div class="menu__side" id="menu_side">
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin.php">
+          <i class="bi bi-person"></i>
+          <span>Usuarios</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
 
-        <div class="options__menu">
 
-            <a href="galeria.php" class="selected">
-                <div class="option">
-                <i class="fa-solid fa-image" title="Galeria"></i>
-                    <h4>Galeria</h4>
-                </div>
-            </a>
+      <?php 
+} }
+ ?>
 
-            <a href="mensajes.php">
-                <div class="option">
-                <i class="fa-solid fa-envelope" title= "Contacto"></i>
-                    <h4>Contacto</h4>
-                </div>
-            </a>
 
-            
-            <a href="salir.php">
-                <div class="option">
-                <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
-                    <h4>Salir</h4>
-                </div>
-            </a>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="salir.php">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Salir</span>
+        </a>
+      </li><!-- End Login Page Nav -->
 
-        </div>
 
-    </div>
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
 
 
 
-    
-    <?php 
-
-       }else if($_SESSION['usuario']['cargo']=="CEO"){
-
-        ?>
- 
-        
-    <header>
-        <div class="icon__menu">
-            <i class="fas fa-bars" id="btn_open"></i>
-        </div>
-    </header>
-
-    <div class="menu__side" id="menu_side">
-
-
-
-        <div class="options__menu">
-
-            <a href="galeria.php" class="selected">
-                <div class="option">
-                <i class="fa-solid fa-image" title="Galeria"></i>
-                    <h4>Galeria</h4>
-                </div>
-            </a>
-            <a href="admin.php" >
-                <div class="option">
-                <i class="fa-solid fa-user" title="Usuarios"></i>
-                    <h4>Usuarios</h4>
-                </div>
-            </a>
-
-            <a href="mensajes.php">
-                <div class="option">
-                <i class="fa-solid fa-envelope" title= "Contacto"></i>
-                    <h4>Contacto</h4>
-                </div>
-            </a>
-
-            <a href="salir.php">
-                <div class="option">
-                <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
-                    <h4>Salir</h4>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
-    <?php 
-
-       }
-    
-   }
   
-   ?>
- 
+
+    <div class="pagetitle">
+      <h1>General Tables</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 sol-sm-12">
 
 
-    <main>
-      <br><br>    <br><br>
-      <div class="container">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8 col-sm-12">
-            <table id="ejemplo" class="table table-striped" style="width:100%">
-                    <thead class="table-success table-striped">
-                        <tr>
-                            <th>ID</th>
-                            <th>imagen</th>
-                            <th>Mostrar</th>
-                            <th>Borrar</th>  
-                            <th>Ver</th>
-                            <th>Publicar</th>
-                            <th>Editar</th>
-                        </tr>
-                    </thead>
+          <div class="card">
+            <div class="card-body">
 
-                    <tbody>
-                        <?php
+              <!-- Primary Color Bordered Table -->
+              <table class="table table-bordered border-primary">
+                <thead>
+   
+                  <tr>
+                            <th scope="col">imagen</th>
+                            <th scope="col">Mostrar</th>
+                            <th scope="col">Borrar</th>  
+                            <th scope="col">Ver</th>
+                            <th scope="col">Publicar</th>
+                            <th scope="col">Editar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php
                                             while($row=mysqli_fetch_array($query)){
                                         ?>
-                        <tr>
-                            <th>
-                                <?php  echo $row['ID_galeria']?>
-                            </th>
-                            <th>
-                                <?php  echo $row['nombreimagen']?>
-                            </th>
-                            <th>
-                                <?php  echo $row['mostrar']?>
-                            </th>
-                      
-                        
-                            <th> <a   class="btn btn-danger" data-toggle="modal" data-target="#ModalDelete<?php echo $row['ID_galeria'] ?>"><i class="bi bi-trash"></i></a></th>    
-                            <th><a  class="btn btn-info" data-toggle="modal" data-target="#ModalVer<?php echo $row['ID_galeria'] ?>" ><i class="bi bi-eye-fill"></i></a> </th>
-                            <th><a   class="btn btn-success" data-toggle="modal" data-target="#ModalConfir<?php echo $row['ID_galeria'] ?>" ><i class="bi bi-check"></i></a></th>    
-                            
-                            <th><a class="btn btn-primary" data-toggle="modal" data-target="#ModalEdit<?php echo $row['ID_galeria'] ?>"><i class="bi bi-pencil-square"></i></a></th>      
-                                                             
-                          
-                        </tr>
+                  <tr>
+                    <td> <?php  echo $row['nombreimagen']?></td>
+                    <td>     <?php  echo $row['mostrar']?></td>
+                    <td> <a   class="btn btn-danger" data-toggle="modal" data-target="#ModalDelete<?php echo $row['ID_galeria']?>"><i class="bi bi-trash"></i></a></td>  
+                    <td><a  class="btn btn-info" data-toggle="modal" data-target="#ModalVer<?php echo $row['ID_galeria']?>" ><i class="bi bi-eye-fill"></i></a> </td>
+                    <td><a   class="btn btn-success" data-toggle="modal" data-target="#ModalConfir<?php echo $row['ID_galeria']?>" ><i class="bi bi-check"></i></a></td> 
+                    <td><a class="btn btn-primary" data-toggle="modal" data-target="#ModalEdit<?php echo $row['ID_galeria']?>"><i class="bi bi-pencil-square"></i></a></td>
+                  </tr>
+
 
 
 
   <!-- Modal -->
-  <div class="modal fade" id="ModalDelete<?php echo $row['ID_galeria'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="ModalDelete<?php echo $row['ID_galeria']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">  ¿Seguro quieres eliminar la imagen: <?php echo $row['nombreimagen'] ?> ?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">  ¿Seguro quieres eliminar la imagen: <?php echo $row['nombreimagen']?> ?</h5>
         
         </div>
      
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <a  class="btn btn-danger" href="cruds/galeria/eliminarGaleria.php?id=<?php echo $row['ID_galeria'] ?>">Eliminar</a>
+          <a  class="btn btn-danger" href="cruds/galeria/eliminarGaleria.php?id=<?php echo $row['ID_galeria']?>">Eliminar</a>
         </div>
       </div>
     </div>
@@ -270,11 +268,11 @@ if($_SESSION['usuario']==""){
 <div class="container">
 
 
-<form  enctype="multipart/form-data" id="frmajax<?php echo $row['ID_galeria'] ?>" method="POST" action="cruds/galeria/actualizarGaleria.php">
+<form  enctype="multipart/form-data" id="frmajax<?php echo $row['ID_galeria']?>" method="POST" action="cruds/galeria/actualizarGaleria.php">
                     
-                    <input type="hidden" name="ID_galeria1" value="<?php echo $row['ID_galeria']  ?>">
+                    <input type="hidden" name="ID_galeria1" value="<?php echo $row['ID_galeria']?>">
                     <label>nombreimagen:</label>
-                    <input type="text" class="form-control mb-3" name="nombreimagen1"  value="<?php echo $row['nombreimagen']  ?>"></input>
+                    <input type="text" class="form-control mb-3" name="nombreimagen1"  value="<?php echo $row['nombreimagen']?>"></input>
              
                     <label>Imagen: </label>
                     <input type="file" class="form-control mb-3" name="imagen1">
@@ -330,47 +328,48 @@ if($_SESSION['usuario']==""){
 </script>
 
 
+                  <?php
+                                       } ?>
+                </tbody>
+              </table>
+              <!-- End Primary Color Bordered Table -->
 
-
-
-
-                        <?php 
-                                            }
-                                        ?>
-                    </tbody>
-                </table>
-
-                <a type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-primary text-center"
-                    value="AGREGAR BLOG" href="cruds/galeria/agregarImagen.php">AGREGAR IMAGEN</a>
             </div>
+          </div>
 
-
-            <div class="col-md-"></div>
         </div>
-        </div>
+      </div>
+    </section>
 
-    </div>
-
-    </main>
-
+  </main><!-- End #main -->
 
 
 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
+  <!-- Vendor JS Files -->
+  <script src="vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/chart.js/chart.umd.js"></script>
+  <script src="vendor/echarts/echarts.min.js"></script>
+  <script src="vendor/quill/quill.min.js"></script>
+  <script src="vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="vendor/tinymce/tinymce.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="main.js"></script>
 
 
-<script src="../js/menulateral.js"></script>
 
-<script src="../css/assets/popper.min.js"></script>
+  
+  <script src="../css/assets/popper.min.js"></script>
 <script src="../css/assets/bootstrap.min.js"></script>
 
 
 <script  src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></script>
 <script  src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 <script src="../js/app.js"></script>
-
-    </script>
 
 
 </body>
