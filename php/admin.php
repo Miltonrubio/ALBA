@@ -63,6 +63,8 @@ if(isset($_SESSION['usuario'])){
 
 
 
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+		<script defer src="cruds/usuarios/app.js"></script>
 </head>
 
 
@@ -139,6 +141,8 @@ if(isset($_SESSION['usuario'])){
                     <option>Secretaria</option>
                 </select>
 
+                <input type="file" class="form-control mb-3" name="foto" placeholder="Foto"
+                    required>
                 <input type="number" maxlength="10" class="form-control mb-3" name="celular" placeholder="Celular"
                     required>
                     <input type="email"  class="form-control mb-3" name="correo" placeholder="Correo"    required>
@@ -232,10 +236,10 @@ if(isset($_SESSION['usuario'])){
 
 
 
-                                    <form id="frmajax<?php echo $row['ID_usuario']?>" method="POST">
+                                <form  enctype="multipart/form-data" id="frmajax<?php echo $row['ID_usuario']?>" method="POST" action="cruds/usuarios/actualizar.php">
 
                                         <input type="hidden" name="ID_usuario1"
-                                            value="<?php echo $row['ID_usuario']  ?>">
+                                            value="<?php echo $row['ID_usuario']?>">
                                         <label>Nombres:</label>
                                         <input type="text" class="form-control mb-3" name="nombre1"
                                             placeholder="Nombres" value="<?php echo $row['nombre']?>">
@@ -245,12 +249,24 @@ if(isset($_SESSION['usuario'])){
                                             <label>Correo:</label>
                                         <input type="mail" class="form-control mb-3" name="correo1"
                                             placeholder="Correo" value="<?php echo $row['correo']?>">
-                                        <label>Rol: </label>
+                                        <label>Cargo: </label>
                                         <input type="text" class="form-control mb-3" name="cargo1" placeholder="Cargo"
                                             value="<?php echo $row['cargo']?>">
+                                            <label>Usuario: </label>
+                                        <input type="text" class="form-control mb-3" name="usuario"
+                                            value="<?php echo $row['usuario']?>" disabled id="link">
+                                        
+
+                                            <label>Foto: </label>
+                                        <input type="file" class="form-control mb-3" name="imagen1" placeholder="Foto"
+                                            value="<?php echo $row['foto']?>">
+
+                                            <img src="../img/usuarios/<?php echo $row['foto']?>" height="auto" width="100%">
+                                            
                                         <label>Celular:</label>
                                         <input type="text" class="form-control mb-3" name="celular1"
                                             placeholder="Celular" value="<?php echo $row['celular']?>">
+                                            
                                         <label>Clave: </label>
                                         <input type="text" class="form-control mb-3" name="clave1" placeholder="Clave"
                                             value="<?php echo $row['clave']?>">
@@ -272,26 +288,36 @@ if(isset($_SESSION['usuario'])){
 
 
                     <script type="text/javascript">
-                        $(document).ready(function () {
-                            $('#btnguardar<?php echo $row['ID_usuario']?>').click(function () {
-                                var datos = $('#frmajax<?php echo $row['ID_usuario'] ?>').serialize();
-                                $.ajax({
-                                    type: "POST",
-                                    url: "cruds/usuarios/actualizar.php",
-                                    data: datos,
-                                    success: function (r) {
-                                        if (r == 1) {
-                                            window.location.replace("admin.php");
-                                        } else {
-                                            alert("Fallo el server");
-                                        }
-                                    }
-                                });
+	$(document).ready(function(){
+    $("#frmajax<?php echo $row['ID_usuario']?>").on("submit", function (event) {
 
-                                return false;
-                            });
-                        });
-                    </script>
+      event.preventDefault();
+  
+      var form = $('#frmajax<?php echo $row['ID_usuario']?>')[0]; 
+      var formData = new FormData(form);
+
+      formData.append('imagen1', $('input[type=file]')[0].files[0]);
+
+			$.ajax({
+        type: $(this).attr("method"),
+        url: $(this).attr("action"),
+        data: formData,
+        contentType: false,
+        processData: false,
+      
+				success:function(r){
+					if(r==1){
+                                            window.location.replace("admin.php");
+					}else{
+                                            window.location.replace("admin.php");
+					}
+				}
+			});
+
+			return false;
+		});
+	});
+</script>
 
                     <?php 
                                             }
@@ -308,8 +334,11 @@ if(isset($_SESSION['usuario'])){
 
 </main>
 
-
-
+<style>
+.modal-open {
+    overflow: hidden;
+}
+</style>
 
 
 <script src="../js/menulateral.js"></script>

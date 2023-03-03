@@ -6,7 +6,7 @@ $con=conectar();
 $id=$_GET['id'];
 
 //$sql="SELECT *, date_format(fecha, '%d-%m-%Y') as fecha_formateada FROM blog JOIN usuarios USING(ID_usuario) WHERE ID_blog=$id";
-$sql="SELECT * FROM usuarios WHERE ID_usuario=$id";
+$sql="SELECT * FROM usuarios WHERE usuario='$id'";
 
 //http://localhost/realba/html/Employees.php?id=1
 
@@ -37,7 +37,7 @@ $query=mysqli_query($con,$sql);
                                           while($row=mysqli_fetch_array($query)){
                                   ?>
     <div class="card-container">
-        <img src="../img/ALBA_WEB_ELEMENTS-01.png" alt="user" class="round">
+        <img src="../img/usuarios/<?php  echo $row['foto']?>" alt="user" class="round">
         <h3 class="card-name"><?php echo $row['nombre']." ".$row['apellidos']?></h3>
         <h6 class="city">México</h6>
         <p class="job">Ing Programador<br>     <?php  echo $row['cargo'] ?></p>

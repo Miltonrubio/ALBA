@@ -34,9 +34,4 @@ endif;
 
 $mysqli->close();
 
-
-
-
-
-
  ?>

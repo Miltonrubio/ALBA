@@ -1,8 +1,6 @@
 
 <?php 
 
-$conexion=mysqli_connect("localhost","root","","alba");
-
 include("php/conexion.php");
 $con=conectar();
 
@@ -40,6 +38,16 @@ $query1=mysqli_query($con,$sql);
     <link rel="stylesheet" rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-10H1WP1E3D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-10H1WP1E3D');
+</script>
 </head>
 
 <body >

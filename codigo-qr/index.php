@@ -7,7 +7,7 @@ $con=conectar();
 $id=$_GET['id'];
 
 //$sql="SELECT *, date_format(fecha, '%d-%m-%Y') as fecha_formateada FROM blog JOIN usuarios USING(ID_usuario) WHERE ID_blog=$id";
-$sql="SELECT * FROM usuarios WHERE ID_usuario=$id";
+$sql="SELECT * FROM usuarios WHERE usuario='$id'";
 
 //http://localhost/realba/html/Employees.php?id=1
 
@@ -25,10 +25,8 @@ $query=mysqli_query($con,$sql);
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Código QR con Javascript</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="estilos.css" />
+		
+
 		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 		<script defer src="app.js"></script>
 	</head>
@@ -37,7 +35,7 @@ $query=mysqli_query($con,$sql);
 			<form action="" id="formulario" class="formulario">
 			<?php       while($row=mysqli_fetch_array($query)){
                                   ?>
-				<input type="text" id="link" placeholder="Escribe el texto o URL" value="//http://localhost/realba/html/Employees.php?id<?php echo $row['usuario']?>" />
+				<input type="text" id="link" placeholder="Escribe el texto o URL" value="localhost/alba/html/Employees.php?id=<?php echo $row['usuario']?>" />
 
 				<?php } ?>
 				<button class="btn">Generar QR</button>
