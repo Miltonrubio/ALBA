@@ -27,145 +27,109 @@ if(isset($_SESSION['usuario'])){
 
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Admin Alba</title>
+    
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Alba</title>
+    
+    <link rel="shortcut icon" href="../img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
 
-  <!-- Favicons --> 
-  <link rel="shortcut icon" href="../img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
-  <link href="../img/ALBA_WEB_ELEMENTS-01.png" rel="apple-touch-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="../css/menulateral.css">
 
-  <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/simple-datatables/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 
-  <!-- Template Main CSS File -->
-  <link href="style.css" rel="stylesheet">
-
-
-  
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+		<script defer src="cruds/usuarios/app.js"></script>
 </head>
+
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
-
-    <div class="d-flex align-items-center justify-content-between">
-  
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-
-  </header><!-- End Header -->
-
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
 
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
+<body id="body">
+
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+
+    
+
+        <div class="options__menu">
+
+            <a href="galeria.php">
+                <div class="option">
+                <i class="fa-solid fa-image" title="Galeria"></i>
+                    <h4>Galeria</h4>
+                </div>
             </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            <a href="galeria.php" class="selected">
+                <div class="option">
+                <i class="fa-solid fa-user" title="Galeria"></i>
+                    <h4>Usuarios</h4>
+                </div>
             </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="galeria.php" >
-              <i class="bi bi-circle"></i><span>Galeria</span>
-            </a>
-            </li>
-            <li>
             <a href="mensajes.php">
-              <i class="bi bi-circle"></i><span>Mensajes</span>
+                <div class="option">
+                <i class="fa-solid fa-envelope" title= "Contacto"></i>
+                    <h4>Contacto</h4>
+                </div>
             </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
 
-      <li class="nav-heading">Usuarios</li>
+            <a href="salir.php">
+                <div class="option">
+                <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
+                    <h4>Salir</h4>
+                </div>
+            </a>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="admin.php" class="active">
-          <i class="bi bi-person"></i>
-          <span>Usuarios</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
+        </div>
 
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="salir.php">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Salir</span>
-        </a>
-      </li><!-- End Login Page Nav -->
+    </div>
 
 
-    </ul>
-
-  </aside><!-- End Sidebar-->
-
-  <main id="main" class="main">
-
-    <div class="pagetitle">
-      <h1>Usuarios</h1>
-
-    </div><!-- End Page Title -->
 
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 sol-sm-12">
+    <main>
 
-
-        <h1>Registrar nuevo</h1>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-4"></div>
+       
+        <div class="col-lg-4">
+        <br><br> <br><br>
+            <h1>Registrar nuevo</h1>
             <form action="cruds/usuarios/insertar.php" method="POST">
                 <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombres" required>
                 <input type="text" class="form-control mb-3" name="apellidos" placeholder="Apellidos">
@@ -186,59 +150,60 @@ if(isset($_SESSION['usuario'])){
                     required>
                 <input type="submit" class="btn btn-primary">
             </form>
-
-
         </div>
-        </div>
-        </div><!-- End Form -->
-
-        <br>
-        <br>
-        <br>
- 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 sol-sm-12">
-
-
-          <div class="card">
-            <div class="card-body">
-
-              <!-- Primary Color Bordered Table -->
-              <table class="table table-bordered border-primary">
-                <thead>
-   
-                  <tr>
-                            <th scope="col">Nombres</th>
-                            <th scope="col">Cargo</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Celular</th>
-                            <th scope="col">Clave</th> 
-                            <th scope="col">Editar</th>
-                            <th scope="col">Borrar</th> 
-                    
-                  </tr>
+        <div class="col-lg-4"></div>
+    </div>
+    </div>
+    <br>
+    <div class="container">
+        
+        <div class="col-lg-12 col-md-12">
+           <table id="ejemplo" class="table table-striped" style="width:100%">
+                <h1>Usuarios Ingresados</h1>
+                <thead class="table-success">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombres</th>
+                        <th>Cargo</th>
+                        <th>Celular</th>
+                        <th>Correo</th>
+                        <th>Clave</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
                 </thead>
+
                 <tbody>
-                <?php
-                                            while($row=mysqli_fetch_array($query)){
+                    <?php
+                                          
+                                                while($row=mysqli_fetch_array($query)){
                                         ?>
-                  <tr>
-                    <td>
-                            <?php  echo $row['nombre']." ".$row['apellidos']?></td>
-                    <td> 
-                            <?php  echo $row['cargo']?></td>
-                    <td>     <?php  echo $row['correo']?></td>
-                    <td>     <?php  echo $row['celular']?></td>
-                    <td>     <?php  echo $row['clave']?></td>
-                   
-                    <td><a class="btn btn-success" data-toggle="modal"
+                    <tr>
+                        <th>
+                            <?php  echo $row['ID_usuario']?>
+                        </th>
+                        <th>
+                            <?php  echo $row['nombre']." ".$row['apellidos']?>
+                        </th>
+                        <th disabled>
+                            <?php  echo $row['cargo']?>
+                        </th>
+                        <th>
+                            <?php  echo $row['correo']?>
+                        </th>
+                        <th>
+                            <?php  echo $row['celular']?>
+                        </th>
+                        <th>
+                            <?php  echo $row['clave']?>
+                        </th>
+                        <th><a class="btn btn-success" data-toggle="modal"
                                 data-target="#ModalVer<?php echo $row['ID_usuario']?>"><i
-                                    class="bi bi-pencil-square"></i></a></td>  
-                    <td><a class="btn btn-danger" data-toggle="modal"
+                                    class="bi bi-pencil-square"></i></a></th>
+                        <th><a class="btn btn-danger" data-toggle="modal"
                                 data-target="#exampleModal<?php echo $row['ID_usuario']?>"><i
-                                    class="bi bi-trash"></i></a> </td>
-                  </tr>
+                                    class="bi bi-trash"></i></a></th>
+                    </tr>
 
 
                     <!-- Modal -->
@@ -353,42 +318,32 @@ if(isset($_SESSION['usuario'])){
 		});
 	});
 </script>
-                  <?php
-                                       } ?>
-                </tbody>
-              </table>
-              <!-- End Primary Color Bordered Table -->
 
-            </div>
-          </div>
+                    <?php 
+                                            }
+                                        ?>
+                </tbody>
+            </table>
+
 
         </div>
-      </div>
-    </section>
+    </div>
+</div>
 
-  </main><!-- End #main -->
+</div>
 
+</main>
 
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/chart.js/chart.umd.js"></script>
-  <script src="vendor/echarts/echarts.min.js"></script>
-  <script src="vendor/quill/quill.min.js"></script>
-  <script src="vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="vendor/tinymce/tinymce.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="main.js"></script>
+<style>
+.modal-open {
+    overflow: hidden;
+}
+</style>
 
 
+<script src="../js/menulateral.js"></script>
 
-  
-  <script src="../css/assets/popper.min.js"></script>
+<script src="../css/assets/popper.min.js"></script>
 <script src="../css/assets/bootstrap.min.js"></script>
 
 
@@ -396,7 +351,7 @@ if(isset($_SESSION['usuario'])){
 <script  src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 <script src="../js/app.js"></script>
 
+    </script>
 
-</body>
 
 </html>

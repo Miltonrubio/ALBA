@@ -18,196 +18,183 @@ if($_SESSION['usuario']==""){
 
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contacto Alba</title>
 
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensajes Alba</title>
-    
-    <link rel="shortcut icon" href="../img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Favicons --> 
+  <link rel="shortcut icon" href="../img/ALBA_WEB_ELEMENTS-01.png" type="image/x-icon">
+  <link href="../img/ALBA_WEB_ELEMENTS-01.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/simple-datatables/style.css" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
+  <!-- Template Main CSS File -->
+  <link href="style.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="../css/menulateral.css">
-        <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 
-    <!-- Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </head>
 
+<body>
 
 
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-<body id="body">
+    <div class="d-flex align-items-center justify-content-between">
+  
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
-<?php 
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="forms-elements.html">
+              <i class="bi bi-circle"></i><span>Form Elements</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-layouts.html">
+              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-editors.html">
+              <i class="bi bi-circle"></i><span>Form Editors</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-validation.html">
+              <i class="bi bi-circle"></i><span>Form Validation</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="galeria.php" >
+              <i class="bi bi-circle"></i><span>Galeria</span>
+            </a>
+            </li>
+            <li>
+            <a href="mensajes.php" class="active">
+              <i class="bi bi-circle"></i><span>Mensajes</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      
+      <li class="nav-heading">usuarios</li>
+      <?php 
     if(isset($_SESSION['usuario'])){   
-   if($_SESSION['usuario']['cargo']!="CEO"){
+   if($_SESSION['usuario']['cargo']=="CEO"){
 
 ?>
-    <header>
-        <div class="icon__menu">
-            <i class="fas fa-bars" id="btn_open"></i>
-        </div>
-    </header>
 
-    <div class="menu__side" id="menu_side">
-
-        <div class="options__menu">
-
-            <a href="galeria.php" >
-                <div class="option">
-                <i class="fa-solid fa-image" title="Galeria"></i>
-                    <h4>Galeria</h4>
-                </div>
-            </a>
-
-            <a href="mensajes.php" class="selected">
-                <div class="option">
-                <i class="fa-solid fa-envelope" title= "Contacto"></i>
-                    <h4>Contacto</h4>
-                </div>
-            </a>
-
-            
-            <a href="salir.php">
-                <div class="option">
-                <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
-                    <h4>Salir</h4>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="admin.php">
+          <i class="bi bi-person"></i>
+          <span>Usuarios</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
 
 
-
-    
-    <?php 
-
-       }else if($_SESSION['usuario']['cargo']=="CEO"){
-
-        ?>
- 
-        
-    <header>
-        <div class="icon__menu">
-            <i class="fas fa-bars" id="btn_open"></i>
-        </div>
-    </header>
-
-    <div class="menu__side" id="menu_side">
+      <?php 
+} }
+ ?>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="salir.php">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Salir</span>
+        </a>
+      </li><!-- End Login Page Nav -->
 
 
+    </ul>
 
-        <div class="options__menu">
+  </aside><!-- End Sidebar-->
 
-            <a href="galeria.php">
-                <div class="option">
-                <i class="fa-solid fa-image" title="Galeria"></i>
-                    <h4>Galeria</h4>
-                </div>
-            </a>
-            <a href="admin.php" >
-                <div class="option">
-                <i class="fa-solid fa-user" title="Usuarios"></i>
-                    <h4>Usuarios</h4>
-                </div>
-            </a>
+  <main id="main" class="main">
 
-            <a href="mensajes.php" class="selected">
-                <div class="option" >
-                <i class="fa-solid fa-envelope" title= "Contacto"></i>
-                    <h4>Contacto</h4>
-                </div>
-            </a>
+    <div class="pagetitle">
+      <h1>Mensajes</h1>
 
-            <a href="salir.php">
-                <div class="option">
-                <i class="fa-solid fa-door-open" title="Cerrar Sesion"></i>
-                    <h4>Salir</h4>
-                </div>
-            </a>
+    </div><!-- End Page Title -->
 
-        </div>
-
-    </div>
-    <?php 
-
-       }
-    
-   }
-  
-   ?>
- 
-    <main>
-<br><br><br><br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8 col-sm-12">
-                <table id="ejemplo" class="table table-striped" style="width:100%">
-                    <h1 class="titulo2">MENSAJES</h1>
-                    <thead class="table  table-striped">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Mensaje</th>
-                            <th>Correo</th>
-                            <th>Celular</th>
-                            <th>Borrar</th>
-                            <th>Ver</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <?php
-                        while ($row = mysqli_fetch_array($query)) {
-                            ?>
-                            <tr>
-                                <th>
-                                    <?php echo $row['ID_contacto'] ?>
-                                </th>
-                                <th>
-                                    <?php echo $row['nombre'] ?>
-                                </th>
-                                <th>
-                                    <?php echo $row['comentarios'] ?>
-                                </th>
-                                <th>
-                                    <?php echo $row['correo'] ?>
-                                </th>
-                                <th>
-                                    <?php echo $row['celular'] ?>
-                                </th>
-
-                                <th> <a class="btn btn-danger" data-toggle="modal"
-                                        data-target="#ModalDelete<?php echo $row['ID_contacto'] ?>"><i
-                                            class="bi bi-trash"></i></a></th>
-                                <th><a class="btn btn-info" data-toggle="modal"
-                                        data-target="#ModalVer<?php echo $row['ID_contacto'] ?>"><i
-                                            class="bi bi-eye-fill"></i></a> </th>
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 sol-sm-12">
 
 
-                            </tr>
+          <div class="card">
+            <div class="card-body">
+
+              <!-- Primary Color Bordered Table -->
+              <table class="table table-bordered border-primary">
+                <thead>
+   
+                  <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Mensaje</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Borrar</th>  
+                            <th scope="col">Ver</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php
+                                            while($row=mysqli_fetch_array($query)){
+                                        ?>
+                  <tr>
+                    <td> <?php  echo $row['nombre']?></td>
+                    <td>     <?php  echo $row['comentarios']?></td>
+                    <td>     <?php  echo $row['correo']?></td>
+                    <td>     <?php  echo $row['celular']?></td>
+                   
+                    <td> <a   class="btn btn-danger" data-toggle="modal" data-target="#ModalDelete<?php echo $row['ID_contacto']?>"><i class="bi bi-trash"></i></a></td>  
+                    <td><a  class="btn btn-info" data-toggle="modal" data-target="#ModalVer<?php echo $row['ID_contacto']?>" ><i class="bi bi-eye-fill"></i></a> </td>
+                  </tr>
+
 
 
 
@@ -285,36 +272,49 @@ if($_SESSION['usuario']==""){
                             </div>
 
 
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
+
+                  <?php
+                                       } ?>
+                </tbody>
+              </table>
+              <!-- End Primary Color Bordered Table -->
+
             </div>
+          </div>
 
-
-            <div class="col-md-"></div>
         </div>
+      </div>
+    </section>
 
-    </div>
-                    
-    </main>
+  </main><!-- End #main -->
 
 
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<script  src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></script>
-<script  src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-<script src="../css/assets/popper.min.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/chart.js/chart.umd.js"></script>
+  <script src="vendor/echarts/echarts.min.js"></script>
+  <script src="vendor/quill/quill.min.js"></script>
+  <script src="vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="vendor/tinymce/tinymce.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="main.js"></script>
+
+
+
+  
+  <script src="../css/assets/popper.min.js"></script>
 <script src="../css/assets/bootstrap.min.js"></script>
 
 
-<script src="../js/menulateral.js"></script>
-
+<script  src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></script>
+<script  src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 <script src="../js/app.js"></script>
-
-</script>
 
 
 </body>
