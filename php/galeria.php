@@ -6,6 +6,9 @@ $sql="SELECT * FROM galeria ";
 //"SELECT * FROM blog JOIN usuarios USING(ID_usuario) ORDER BY DESC "
 $query=mysqli_query($con,$sql);
 
+
+
+
 session_start();
 
 $Datos=$_SESSION['usuario'];
@@ -197,11 +200,11 @@ if($_SESSION['usuario']==""){
                             </th>
                       
                         
-                            <th> <a   class="btn btn-danger" data-toggle="modal" data-target="#ModalDelete<?php echo $row['ID_galeria'] ?>"><i class="bi bi-trash"></i></a></th>    
-                            <th><a  class="btn btn-info" data-toggle="modal" data-target="#ModalVer<?php echo $row['ID_galeria'] ?>" ><i class="bi bi-eye-fill"></i></a> </th>
-                            <th><a   class="btn btn-success" data-toggle="modal" data-target="#ModalConfir<?php echo $row['ID_galeria'] ?>" ><i class="bi bi-check"></i></a></th>    
+                            <th> <a   class="btn btn-danger" data-toggle="modal" data-target="#ModalDelete<?php echo $row['ID_galeria']?>"><i class="bi bi-trash"></i></a></th>    
+                            <th><a  class="btn btn-info" data-toggle="modal" data-target="#ModalVer<?php echo $row['ID_galeria']?>" ><i class="bi bi-eye-fill"></i></a> </th>
+                            <th><a   class="btn btn-success" data-toggle="modal" data-target="#ModalConfir<?php echo $row['ID_galeria']?>" ><i class="bi bi-check"></i></a></th>    
                             
-                            <th><a class="btn btn-primary" data-toggle="modal" data-target="#ModalEdit<?php echo $row['ID_galeria'] ?>"><i class="bi bi-pencil-square"></i></a></th>      
+                            <th><a class="btn btn-primary" data-toggle="modal" data-target="#ModalEdit<?php echo $row['ID_galeria']?>"><i class="bi bi-pencil-square"></i></a></th>      
                                                              
                           
                         </tr>
@@ -209,17 +212,17 @@ if($_SESSION['usuario']==""){
 
 
   <!-- Modal -->
-  <div class="modal fade" id="ModalDelete<?php echo $row['ID_galeria'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="ModalDelete<?php echo $row['ID_galeria']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">  ¿Seguro quieres eliminar la imagen: <?php echo $row['nombreimagen'] ?> ?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">  ¿Seguro quieres eliminar la imagen: <?php echo $row['nombreimagen']?> ?</h5>
         
         </div>
      
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <a  class="btn btn-danger" href="cruds/galeria/eliminarGaleria.php?id=<?php echo $row['ID_galeria'] ?>">Eliminar</a>
+          <a  class="btn btn-danger" href="cruds/galeria/eliminarGaleria.php?id=<?php echo $row['ID_galeria']?>">Eliminar</a>
         </div>
       </div>
     </div>
@@ -270,11 +273,11 @@ if($_SESSION['usuario']==""){
 <div class="container">
 
 
-<form  enctype="multipart/form-data" id="frmajax<?php echo $row['ID_galeria'] ?>" method="POST" action="cruds/galeria/actualizarGaleria.php">
+<form  enctype="multipart/form-data" id="frmajax<?php echo $row['ID_galeria']?>" method="POST" action="cruds/galeria/actualizarGaleria.php">
                     
-                    <input type="hidden" name="ID_galeria1" value="<?php echo $row['ID_galeria']  ?>">
+                    <input type="hidden" name="ID_galeria1" value="<?php echo $row['ID_galeria']?>">
                     <label>nombreimagen:</label>
-                    <input type="text" class="form-control mb-3" name="nombreimagen1"  value="<?php echo $row['nombreimagen']  ?>"></input>
+                    <input type="text" class="form-control mb-3" name="nombreimagen1"  value="<?php echo $row['nombreimagen']?>"></input>
              
                     <label>Imagen: </label>
                     <input type="file" class="form-control mb-3" name="imagen1">
